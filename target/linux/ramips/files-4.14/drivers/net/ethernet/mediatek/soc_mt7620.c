@@ -241,7 +241,7 @@ static void mt7620_port_init(struct fe_priv *priv, struct device_node *np)
 			PMCR_TX_EN |  PMCR_MAC_MODE | PMCR_IPG;
 
 		mtk_switch_w32(gsw, val, GSW_REG_PORT_PMCR(id));
-		fe_connect_phy_node(priv, priv->phy->phy_node[id]);
+		fe_connect_phy_node(priv, priv->phy->phy_node[id], id);
 		gsw->autopoll |= BIT(id);
 		mt7620_auto_poll(gsw);
 		return;
