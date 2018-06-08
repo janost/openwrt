@@ -90,7 +90,7 @@ CONFIGURE_ARGS += \
 	--enable-bundled-libtom
 
 TARGET_CFLAGS += -DARGTYPE=3 -ffunction-sections -fdata-sections -flto
-TARGET_LDFLAGS += -Wl,--gc-sections -flto=jobserver
+TARGET_LDFLAGS += -Wl,--gc-sections -flto=jobserver $(FPIC)
 
 # remove when pull #786 will be upstreamed
 # ref: https://github.com/openwrt/openwrt/pull/786
